@@ -7,7 +7,7 @@ import sqlite3
 connections = {}  # connections[ 'file.db' ] = connection
 
 
-def read_db( url, sql=None, table=None, where=None, params=None, cls=None, *args, **kwargs ):
+def read_db( url, sql=None, *args, table=None, where=None, params=None, cls=None, **kwargs ):
     # connection
     connection = connections.get( url, None )
 

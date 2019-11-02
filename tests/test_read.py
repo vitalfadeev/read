@@ -1,4 +1,5 @@
 import os
+import sqlite3
 import unittest
 from read import Read
 from read.range import Range
@@ -14,6 +15,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_1_connection(self):
         r = Read( DBWIKIPEDIA )
+        self.assertIsInstance( r, sqlite3.Cursor )
         #self.assertIsInstance( r, Range )
 
 
@@ -41,14 +43,13 @@ class MyTestCase(unittest.TestCase):
 
 
     def test_11(self):
-        #rows = Read( DBWIKIPEDIA, "SELECT * FROM wikipedia WHERE LabelName = ? ", "Cat"  )
-        #self.assertEqual( len(list(rows)), 1 )
-        ...
+        rows = Read( DBWIKIPEDIA, "SELECT * FROM wikipedia WHERE LabelName = ? ", "Cat"  )
+        self.assertEqual( len(list(rows)), 1 )
 
 
     def test_12a( self ):
-        #rows = Read( DBWIKIPEDIA, "SELECT * FROM wikipedia WHERE LabelName = ? ", "Cat" )
-        #self.assertEqual( len(list(rows)), 1 )
+        rows = Read( DBWIKIPEDIA, "SELECT * FROM wikipedia WHERE LabelName = ? ", "Cat" )
+        self.assertEqual( len(list(rows)), 1 )
         ...
 
 
@@ -73,15 +74,13 @@ class MyTestCase(unittest.TestCase):
 
 
     def test_16(self):
-        #rows = Read( DBWIKIPEDIA, "SELECT * FROM wikipedia WHERE LabelName = ? ", "Cat" )
-        #self.assertEqual( len(list(rows)), 1 )
-        ...
+        rows = Read( DBWIKIPEDIA, "SELECT * FROM wikipedia WHERE LabelName = ? ", "Cat" )
+        self.assertEqual( len(list(rows)), 1 )
 
 
     def test_17(self):
-        #for row in Read( DBWIKIPEDIA, "SELECT * FROM wikipedia WHERE LabelName = ? ", "Cat" ):
-        #    self.assertEqual( row[0], "en§Cat§DISAMBIGUATION_INDEF_INDEF_DOMESTICATED§0" )
-        ...
+        for row in Read( DBWIKIPEDIA, "SELECT * FROM wikipedia WHERE LabelName = ? ", "Cat" ):
+            self.assertEqual( row[0], "en§Cat§DISAMBIGUATION_INDEF_INDEF_DOMESTICATED§0" )
 
 
     def test_18(self):
