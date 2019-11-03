@@ -8,14 +8,10 @@ def Read( url, *args, **kwargs ):
     Read data source. See examples below.
 
     Args:
-        url:
-        readers:
-        encoding:
-        streaming:
-        caching:
+        url: Data source
 
     Returns:
-        Range
+        data
 
     ::
 
