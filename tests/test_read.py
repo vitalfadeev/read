@@ -2,7 +2,6 @@ import os
 import sqlite3
 import unittest
 from read import Read
-from read.range import Range
 from .WikipediaItem import WikipediaItem
 
 DBWIKIPEDIA = "tests/data/wikipedia.db"

@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 setuptools.setup(
      name="read",
      version='0.1',
-     scripts=['read/read.py'] ,
+     scripts=[ "read/__init__.py", "read/*" ] ,
      author="Vitaly Fadeev",
      author_email="vital.fadeev@gmail.com",
      description="Read various data sources: file.sqlite3, dump.xml, dump.xml.bz2, file.txt, file.json, file.json.bz2, http://",
