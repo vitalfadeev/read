@@ -96,3 +96,14 @@ def Read( url, *args, **kwargs ):
 
     elif isinstance( url, object ):
         return read_class( url, *args, **kwargs )
+
+# Hi-Level code:
+#
+# def Read()
+#   Range( read.Read() )
+#
+# def Range( iterable ): ...
+#
+
+
+

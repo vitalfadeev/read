@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-     name='read',
+     name="read",
      version='0.1',
      scripts=['read/read.py'] ,
      author="Vitaly Fadeev",
